@@ -1,0 +1,21 @@
+name: Exemplo de CD
+
+on:
+  push:
+      branches:  main 
+
+jobs:
+    deploy:
+        runs-on: self-hosted
+        steps:
+          - name: Pull Docker container
+            run: docker pull lucasakiama/docker-nginx:v1.0
+
+          - name: Stop Docker container
+            run: docker stop ci-example || true
+
+          - name: Remove Docker container
+            run: docker rm ci-example || true
+        
+          - name: Run Docker container
+            run: docker run --name ci-exaple -d -p 8080:8080 lucasakiama/docker-nginx:v1.0
