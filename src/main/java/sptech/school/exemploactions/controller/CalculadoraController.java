@@ -1,12 +1,9 @@
 package sptech.school.exemploactions.controller;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import sptech.school.exemploactions.service.CalculadoraService;
-
 @RestController
 public class CalculadoraController {
     private final CalculadoraService calculadoraService;
